@@ -74,6 +74,8 @@ html{scroll-padding-top:60px}body{background:#0d0b0a}.frame{max-width:none;width
 <script type="module">
 import {createClient} from 'https://esm.sh/@supabase/supabase-js@2.57.0';
 const supabase=createClient('https://tjlanldknskbahzxwecw.supabase.co','sb_publishable_4kTdJhBYRsTwIu3UWGDhDw_BXmVrsXw',{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+// Privacy-friendly first-party visitor analytics: anonymous browser ID, no names or IP storage.
+(async()=>{try{const k='cmstudio_visitor_id';let id=localStorage.getItem(k);if(!id||!/^[0-9a-f-]{36}$/i.test(id)){id=crypto.randomUUID();localStorage.setItem(k,id)}await supabase.rpc('track_studio_visit',{p_visitor:id,p_path:'/'})}catch(e){console.debug('Visitor analytics unavailable',e)}})();
 const $=id=>document.getElementById(id);const icons={};let currentUser=null,authMode='login',lastReference='';
 
 let liveChannel=null,refreshPending=false;
