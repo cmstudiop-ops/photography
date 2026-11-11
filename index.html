@@ -100,4 +100,4 @@ $('claimForm').onsubmit=async e=>{e.preventDefault();if(!currentUser){openModal(
 $('signOutBtn').onclick=async()=>{await supabase.auth.signOut();currentUser=null;stopRealtime();$('accountLabel').textContent='Client Login';closeModals()};
 (async()=>{const {data:{user}}=await supabase.auth.getUser();currentUser=user||null;if(currentUser){$('accountLabel').textContent='My Portal';startRealtime()}})();
 </script>
-</body></html>
+<a href="help.html" aria-label="Get help from CM Studio Photography" style="position:fixed;right:20px;bottom:20px;z-index:9000;background:#c9ff1a;color:#081b37;padding:14px 19px;border-radius:50px;box-shadow:0 12px 32px #0005;font:800 13px Arial,sans-serif;text-decoration:none">Need Help? ↗</a></body></html>
