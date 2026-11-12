@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /portal.html
+Sitemap: https://cmstudios.co.za/sitemap.xml
